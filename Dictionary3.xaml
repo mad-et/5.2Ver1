@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style TargetType="ToolBarTray" x:Key="TrayStyle">
+        <Setter Property="ToolBarTray.Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1"
+                                 StartPoint="0.5,0">
+                    <GradientStop Color="#FF962D2D" Offset="0"/>
+                    <GradientStop Color="#FF2F28FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

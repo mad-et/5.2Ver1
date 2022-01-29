@@ -1,0 +1,134 @@
+﻿<Window x:Class="WpfApp5._2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp5._2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF962D2D" Offset="0"/>
+                <GradientStop Color="#FF2F28FF" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Menu Padding="5" Grid.Row="0" Background="#FF962D2D">
+            <MenuItem Header="_Файл" Foreground="DarkGoldenrod" FontWeight="Bold" BorderBrush="DarkGoldenrod">
+                <MenuItem Header="_Открыть" Click="Open">
+                    <MenuItem.Icon>
+                        <Image Source="Image/open.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Сохранить" Click="Save">
+                    <MenuItem.Icon>
+                        <Image Source="Image/save.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="_Выход" Click="Close">
+                    <MenuItem.Icon>
+                        <Image Source="Image/close.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <ToolBarTray Grid.Row="1" Style="{StaticResource TrayStyle}" Cursor="Hand">
+            <ToolBar Margin="5" Style="{StaticResource ToolBarStyle}">
+                <Menu Padding="5" Grid.Row="0" Style="{StaticResource MenuStyle}">
+                    <MenuItem Header="" Width="50" Padding="4">
+                        <MenuItem.Background >
+                            <ImageBrush ImageSource="Image/lines.png"/>
+                        </MenuItem.Background>
+                        <Border BorderThickness="1" CornerRadius="8,8,3,3">
+                            <StackPanel Width="140" Height="115">
+                                <Button Cursor="Hand" RenderTransformOrigin="0.5,0.5" Click="Thin1" Background="White">
+                                    <Button.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleX="2"/>
+                                            <SkewTransform/>
+                                            <RotateTransform/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Button.RenderTransform>
+                                    <Image Source="Image/thin1.png"/>
+                                </Button>
+                                <Button Cursor="Hand" RenderTransformOrigin="0.5,0.5" Click="Thin2" Background="White">
+                                    <Button.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleX="2"/>
+                                            <SkewTransform/>
+                                            <RotateTransform/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Button.RenderTransform>
+                                    <Image Source="Image/thin2.png"/>
+                                </Button>
+                                <Button Cursor="Hand" RenderTransformOrigin="0.5,0.5" Click="Thin3" Background="White">
+                                    <Button.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleX="2"/>
+                                            <SkewTransform/>
+                                            <RotateTransform/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Button.RenderTransform>
+                                    <Image Source="Image/thin3.png"/>
+                                </Button>
+                                <Button Cursor="Hand" RenderTransformOrigin="0.5,0.5" Click="Thin4" Background="White">
+                                    <Button.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleX="2"/>
+                                            <SkewTransform/>
+                                            <RotateTransform/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Button.RenderTransform>
+                                    <Image Source="Image/thin4.png"/>
+                                </Button>
+                            </StackPanel>
+                        </Border>
+                    </MenuItem>
+                </Menu>
+            </ToolBar>
+            <ToolBar Margin="5" Style="{StaticResource ToolBarStyle}">
+                <ToggleButton Click="Eraser" x:Name="eraser">
+                    <Image Source="Image/eraser.png"/>
+                </ToggleButton>
+            </ToolBar>
+            <ToolBar Margin="5" Style="{StaticResource ToolBarStyle}">
+                <ToggleButton Click="Select" x:Name="select">
+                    <Image Source="Image/select.png"/>
+                </ToggleButton>
+            </ToolBar>
+            <ToolBar Margin="5" Style="{StaticResource ToolBarStyle}">
+                <UniformGrid >
+                    <Button Width="15" Height="15" x:Name="black" Click="Color">
+                        <Image Source="Image/black.png"></Image>
+                    </Button>
+                    <Button Width="15" Height="15" x:Name="red" Click="Color">
+                        <Image Source="Image/red.png"></Image>
+                    </Button>
+                    <Button Width="15" Height="15" x:Name="blue" Click="Color">
+                        <Image Source="Image/blue.png"></Image>
+                    </Button>
+                    <Button Width="15" Height="15" x:Name="green" Click="Color">
+                        <Image Source="Image/green.png"></Image>
+                    </Button>
+                    
+                </UniformGrid>
+            </ToolBar>
+            <ToolBar Margin="5" Style="{StaticResource ToolBarStyle}">
+                <ToggleButton Click="Print" x:Name="print">
+                    <Image Source="Image/print.png"/>
+                </ToggleButton>
+            </ToolBar>
+        </ToolBarTray>
+        <InkCanvas x:Name="inkcanvas" Grid.Row="2" Margin="5"/>
+    </Grid>
+</Window>
